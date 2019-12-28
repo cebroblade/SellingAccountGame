@@ -1,0 +1,321 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<link rel="stylesheet" href="CSS/project.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <script src="js/jquery-1.11.3.min.js" type="text/javascript"></script>
+    <script src="js/jssor.slider-22.2.8.mini.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+
+            var jssor_1_SlideshowTransitions = [
+              {$Duration:1200,$Opacity:2}
+            ];
+
+            var jssor_1_options = {
+              $AutoPlay: true,
+              $SlideshowOptions: {
+                $Class: $JssorSlideshowRunner$,
+                $Transitions: jssor_1_SlideshowTransitions,
+                $TransitionsOrder: 1
+              },
+              $ArrowNavigatorOptions: {
+                $Class: $JssorArrowNavigator$
+              },
+              $BulletNavigatorOptions: {
+                $Class: $JssorBulletNavigator$
+              }
+            };
+
+            var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+
+            /*responsive code begin*/
+            /*you can remove responsive code if you don't want the slider scales while window resizing*/
+            function ScaleSlider() {
+                var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
+                if (refSize) {
+                    refSize = Math.min(refSize, 1280);
+                    jssor_1_slider.$ScaleWidth(refSize);
+                }
+                else {
+                    window.setTimeout(ScaleSlider, 30);
+                }
+            }
+            ScaleSlider();
+            $(window).bind("load", ScaleSlider);
+            $(window).bind("resize", ScaleSlider);
+            $(window).bind("orientationchange", ScaleSlider);
+            /*responsive code end*/
+        });
+    </script>
+    <style>
+        /* jssor slider bullet navigator skin 05 css */
+        /*
+        .jssorb05 div           (normal)
+        .jssorb05 div:hover     (normal mouseover)
+        .jssorb05 .av           (active)
+        .jssorb05 .av:hover     (active mouseover)
+        .jssorb05 .dn           (mousedown)
+        */
+        .jssorb05 {
+            position: absolute;
+        }
+        .jssorb05 div, .jssorb05 div:hover, .jssorb05 .av {
+            position: absolute;
+            /* size of bullet elment */
+            width: 16px;
+            height: 16px;
+            background: url('img/b05.png') no-repeat;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .jssorb05 div { background-position: -7px -7px; }
+        .jssorb05 div:hover, .jssorb05 .av:hover { background-position: -37px -7px; }
+        .jssorb05 .av { background-position: -67px -7px; }
+        .jssorb05 .dn, .jssorb05 .dn:hover { background-position: -97px -7px; }
+
+        /* jssor slider arrow navigator skin 12 css */
+        /*
+        .jssora12l                  (normal)
+        .jssora12r                  (normal)
+        .jssora12l:hover            (normal mouseover)
+        .jssora12r:hover            (normal mouseover)
+        .jssora12l.jssora12ldn      (mousedown)
+        .jssora12r.jssora12rdn      (mousedown)
+        */
+        .jssora12l, .jssora12r {
+            display: block;
+            position: absolute;
+            /* size of arrow element */
+            width: 30px;
+            height: 46px;
+            cursor: pointer;
+            background: url('img/a12.png') no-repeat;
+            overflow: hidden;
+        }
+        .jssora12l { background-position: -16px -37px; }
+        .jssora12r { background-position: -75px -37px; }
+        .jssora12l:hover { background-position: -136px -37px; }
+        .jssora12r:hover { background-position: -195px -37px; }
+        .jssora12l.jssora12ldn { background-position: -256px -37px; }
+        .jssora12r.jssora12rdn { background-position: -315px -37px; }
+    </style>
+    <style>
+		.container_1 h1{
+			color: rgba(169,191,6,1.00);
+			font-family: Arial, aladin, Symbol," Wingdings 2";
+		}
+		.container_1 h3{
+			color: rgba(163,167,6,1.00);
+		}
+	</style>
+
+
+</head>
+
+<body>
+	<header>
+		<div><a href="index.html"><img class="logo" src="imgs/logo2.JPG"  height="70px" width="30%" alt=""></a></div>
+<button class="btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="imgs/img_avatar2.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <button class="login" type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+		<a href="Recharge.html"><button class="btn Recharge">Recharge</button></a>
+		<a href="guide.html"><button class="btn guide">guide</button></a>
+		<a href="Reputation.html"><button class="btn Reputation">Reputation</button></a>
+		<a href="index.html"><button class="btn home"><i class="fa fa-home"></i>Home</button></a>
+
+
+
+	
+		
+		
+		
+		
+	</header>
+
+	<div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:1280px;height:500px;overflow:hidden;visibility:hidden;">
+        <!-- Loading Screen -->
+        <div data-u="loading" style="position:absolute;top:0px;left:0px;background-color:rgba(0,0,0,0.7);">
+            <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
+            <div style="position:absolute;display:block;background:url('img/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
+        </div>
+        
+       <!-- Hiệu chỉnh độ rộng và độ cao cho các ảnh trong slideshow-->
+        <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:1280px;height:500px;overflow:hidden;">
+            <div>
+                <img data-u="image" src="imgs/zed.jpg" />
+            </div>
+            <a data-u="any" href="http://www.jssor.com" style="display:none">Simple Fade Slideshow</a>
+            <div>
+                <img data-u="image" src="imgs/yasuo.png" />
+            </div>
+            <div>
+                <img data-u="image" src="imgs/gialap.jpg" />
+            </div>
+            <div>
+                <img data-u="image" src="imgs/azir.jpg" />
+            </div>
+        </div>
+        <!-- Bullet Navigator -->
+        <div data-u="navigator" class="jssorb05" style="bottom:16px;right:16px;" data-autocenter="1">
+            <!-- bullet navigator item prototype -->
+            <div data-u="prototype" style="width:16px;height:16px;"></div>
+        </div>
+        <!-- Arrow Navigator -->
+        <span data-u="arrowleft" class="jssora12l" style="top:0px;left:0px;width:30px;height:46px;" data-autocenter="2"></span>
+        <span data-u="arrowright" class="jssora12r" style="top:0px;right:0px;width:30px;height:46px;" data-autocenter="2"></span>
+    </div>
+
+	
+	<div class="container_1"> 
+		<div class="row">
+  <div class="col-75">
+    <div class="container">
+      <form action="/action_page.php">
+      
+        <div class="row">
+          <div class="col-50">
+            <h1>Card Recharge</h1>
+            <label for="fname"><i class="fa fa-user"></i> User</label>
+            <input type="text" id="fname" name="firstname" placeholder="LeeThanhDat1999">
+            <label for="email"><i class="fa fa-envelope"></i> Email</label>
+            <input type="text" id="email" name="email" placeholder="john@fpt.edu.vn">
+            <label for="adr"><i class="fa fa-password"></i> Password</label>
+            <input type="text" id="adr" name="address" placeholder="******">
+            <label for="city"><i class="fa fa-institution"></i> City</label>
+            <input type="text" id="city" name="city" placeholder="Bien Hoa">
+
+            <div class="row">
+              <div class="col-50">
+                <label for="state">Province</label>
+                <input type="text" id="state" name="state" placeholder="Dong Nai">
+              </div>
+              <div class="col-50">
+                <label for="zip">Zip</label>
+                <input type="text" id="zip" name="zip" placeholder="10001">
+              </div>
+            </div>
+          </div>
+
+          <div class="col-50">
+            <h3>Payment</h3>
+            <label for="fname">Accepted Cards</label>
+            <div class="icon-container">
+              <i class="fa fa-cc-visa" style="color:navy;"></i>
+              <i class="fa fa-cc-amex" style="color:blue;"></i>
+              <i class="fa fa-cc-mastercard" style="color:red;"></i>
+              <i class="fa fa-cc-discover" style="color:orange;"></i>
+            </div>
+            <label for="cname">Name on Card</label>
+            <input type="text" id="cname" name="cardname" placeholder="Viettel">
+            <label for="ccnum">Seri card number</label>
+            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+            <label for="expmonth">Nominal Value</label>
+			  <input type="text" id="expmonth" name="expmonth" placeholder="20.000 <sub>VND</sub>">
+            <div class="row">
+              <div class="col-50">
+                <label for="expyear">Exp Year</label>
+                <input type="text" id="expyear" name="expyear" placeholder="2018">
+              </div>
+              <div class="col-50">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv" placeholder="352">
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        <label>
+          <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+        </label>
+        <input type="submit" value="Continue to checkout" class="btn sending">
+      </form>
+    </div>
+  </div>
+		
+	</div>
+	
+	<footer>
+	  		<div class="left_place">
+	  			<ul>
+	  				<li style="color: white" type="square" ><b>Address</b>: 2 Nguyen Thai Son ward 4, GoVap district, HCM city </li>
+	  				
+	  				<li style="color: white" type="square">Phone: <b>0988621177</b> </li>
+	  				
+	  				<li style="color: white" type="square">Guide to buy online </li>
+	  				<li style="color: white" type="square">Guide to buy installment </li>
+	  			</ul>
+	  		</div>
+	  		
+	  		<div class="center_place">
+	  			<ul>
+	  				<li style="color: white" type="square"> <b>Address</b>: 300 Quang Trung ward 9, GoVap district, HCM </li>
+	  				
+	  				<li style="color: white" type="square">Phone: <b>0222435888</b></li>
+	  				
+	  				<li style="color: white" type="square">Warranty Policy </li>
+	  				
+	  				<li style="color: white" type="square">Provide more tool to play </li>
+	  				
+	  			</ul>
+	  		</div>
+	  		<div class="right_place">
+	  			<img src="imgs/iconfb.jpg" >
+	  			<img src="imgs/icon2insta.jpg" >
+	  			<img src="imgs/icongmail.jpg" >
+	  			<img src="imgs/icontw.jpg" >
+	  		</div>
+	  	</footer>
+	
+	
+	
+	
+	
+	
+	
+
+	
+
+	
+</body>
+</html>

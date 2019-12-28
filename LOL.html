@@ -1,0 +1,541 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<link rel="stylesheet" href="CSS/project.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--Copy code sau vào thẻ head của trang-->
+    <script src="js/jquery-1.11.3.min.js" type="text/javascript"></script>
+    <script src="js/jssor.slider-22.2.8.mini.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+
+            var jssor_1_SlideshowTransitions = [
+              {$Duration:1200,$Opacity:2}
+            ];
+
+            var jssor_1_options = {
+              $AutoPlay: true,
+              $SlideshowOptions: {
+                $Class: $JssorSlideshowRunner$,
+                $Transitions: jssor_1_SlideshowTransitions,
+                $TransitionsOrder: 1
+              },
+              $ArrowNavigatorOptions: {
+                $Class: $JssorArrowNavigator$
+              },
+              $BulletNavigatorOptions: {
+                $Class: $JssorBulletNavigator$
+              }
+            };
+
+            var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+
+            /*responsive code begin*/
+            /*you can remove responsive code if you don't want the slider scales while window resizing*/
+            function ScaleSlider() {
+                var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
+                if (refSize) {
+                    refSize = Math.min(refSize, 1280);
+                    jssor_1_slider.$ScaleWidth(refSize);
+                }
+                else {
+                    window.setTimeout(ScaleSlider, 30);
+                }
+            }
+            ScaleSlider();
+            $(window).bind("load", ScaleSlider);
+            $(window).bind("resize", ScaleSlider);
+            $(window).bind("orientationchange", ScaleSlider);
+            /*responsive code end*/
+        });
+    </script>
+    <style>
+        /* jssor slider bullet navigator skin 05 css */
+        /*
+        .jssorb05 div           (normal)
+        .jssorb05 div:hover     (normal mouseover)
+        .jssorb05 .av           (active)
+        .jssorb05 .av:hover     (active mouseover)
+        .jssorb05 .dn           (mousedown)
+        */
+        .jssorb05 {
+            position: absolute;
+        }
+        .jssorb05 div, .jssorb05 div:hover, .jssorb05 .av {
+            position: absolute;
+            /* size of bullet elment */
+            width: 16px;
+            height: 16px;
+            background: url('img/b05.png') no-repeat;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .jssorb05 div { background-position: -7px -7px; }
+        .jssorb05 div:hover, .jssorb05 .av:hover { background-position: -37px -7px; }
+        .jssorb05 .av { background-position: -67px -7px; }
+        .jssorb05 .dn, .jssorb05 .dn:hover { background-position: -97px -7px; }
+
+        /* jssor slider arrow navigator skin 12 css */
+        /*
+        .jssora12l                  (normal)
+        .jssora12r                  (normal)
+        .jssora12l:hover            (normal mouseover)
+        .jssora12r:hover            (normal mouseover)
+        .jssora12l.jssora12ldn      (mousedown)
+        .jssora12r.jssora12rdn      (mousedown)
+        */
+        .jssora12l, .jssora12r {
+            display: block;
+            position: absolute;
+            /* size of arrow element */
+            width: 30px;
+            height: 46px;
+            cursor: pointer;
+            background: url('img/a12.png') no-repeat;
+            overflow: hidden;
+        }
+        .jssora12l { background-position: -16px -37px; }
+        .jssora12r { background-position: -75px -37px; }
+        .jssora12l:hover { background-position: -136px -37px; }
+        .jssora12r:hover { background-position: -195px -37px; }
+        .jssora12l.jssora12ldn { background-position: -256px -37px; }
+        .jssora12r.jssora12rdn { background-position: -315px -37px; }
+    </style>
+
+</head>
+
+<body>
+	<header>
+		<div><a href="index.html"><img class="logo" src="imgs/logo2.JPG"  height="70px" width="30%" alt=""></a></div>
+<button class="btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="imgs/img_avatar2.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <button class="login" type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+		<a href="Recharge.html"><button class="btn Recharge">Recharge</button></a>
+		<a href="guide.html"><button class="btn guide" >guide</button></a>
+		<a href="Reputation.html"><button class="btn Reputation">Reputation</button></a>
+		<a href="index.html"><button href="index.html" class="btn home"><i class="fa fa-home"></i>Home</button></a>
+			<div class="dropdown">
+  			<button class="btn" style="border-left: ">
+    		<i class="fa fa-caret-down"></i>
+  			</button>
+ 	 		<div class="dropdown-content">
+    			<a href="index.html">LienQuan</a>
+    			<a href="LOL.html">League Of Legend</a>
+    			
+  </div>
+</div>
+
+
+	
+		
+		
+		
+		
+</header>
+	<div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:1280px;height:500px;overflow:hidden;visibility:hidden;">
+        <!-- Loading Screen -->
+        <div data-u="loading" style="position:absolute;top:0px;left:0px;background-color:rgba(0,0,0,0.7);">
+            <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
+            <div style="position:absolute;display:block;background:url('img/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
+        </div>
+        
+       <!-- Hiệu chỉnh độ rộng và độ cao cho các ảnh trong slideshow-->
+        <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:1280px;height:500px;overflow:hidden;">
+            <div>
+                <img data-u="image" src="imgs/zed.jpg" />
+            </div>
+            <a data-u="any" href="http://www.jssor.com" style="display:none">Simple Fade Slideshow</a>
+            <div>
+                <img data-u="image" src="imgs/yasuo.png" />
+            </div>
+            <div>
+                <img data-u="image" src="imgs/gialap.jpg" />
+            </div>
+            <div>
+                <img data-u="image" src="imgs/azir.jpg" />
+            </div>
+        </div>
+        <!-- Bullet Navigator -->
+        <div data-u="navigator" class="jssorb05" style="bottom:16px;right:16px;" data-autocenter="1">
+            <!-- bullet navigator item prototype -->
+            <div data-u="prototype" style="width:16px;height:16px;"></div>
+        </div>
+        <!-- Arrow Navigator -->
+        <span data-u="arrowleft" class="jssora12l" style="top:0px;left:0px;width:30px;height:46px;" data-autocenter="2"></span>
+        <span data-u="arrowright" class="jssora12r" style="top:0px;right:0px;width:30px;height:46px;" data-autocenter="2"></span>
+    </div>
+
+	
+	<div class="container_1"> 
+		<div class="box_1"><h1>Account Of League of Legends</h1></div>
+		<div class="product">
+			<div class="ID_pro"> Code ACC #011205 </div>
+			<img src="imgs/636751569267667422_bandicam 2018-10-14 23-34-19-849.jpg" width="100%" height="171" alt="">
+				<div class="overlay">
+    			<div class="text">
+    				<ul>
+    					<li type="circle">Rank: Platium 3 season 8 </li>
+    					<li type="circle">Champion: 141</li>
+    					<li type="circle">Skin: 48</li>
+    					<li type="circle">Gem: 21</li>
+    					<li type="circle">IP: 115000</li>
+    					<li type="circle">Frame: Platium</li>
+    				</ul>
+    			</div>
+  				</div>
+			<h2><center>Account LOL</center></h2>
+			<h4><center>Price: 870.000 VND <sup>card</sup>
+			<br>
+				Price: 700.000 VND <sup>ATM</sup>
+			</center></h4>
+			<button class="buy">Buy Now</button>
+		</div>
+
+		<div class="product">
+			<div class="ID_pro"> Code ACC #11204 </div>
+			<img src="imgs/636751564876720085_bandicam 2018-10-14 23-27-37-810.jpg" width="100%" height="171" alt="">
+				<div class="overlay">
+    			<div class="text">
+    				<ul>
+    					<li type="circle">Rank: Platium 4 season 8</li>
+    					<li type="circle">Champion: 141</li>
+    					<li type="circle">Skin: 95</li>
+    					<li type="circle">Gem: 16</li>
+    					<li type="circle">IP: 126.000</li>
+    					<li type="circle">Frame: Platium</li>
+    				</ul>
+    			</div>
+  				</div>
+			<h2><center>Account LOL</center></h2>
+			<h4><center>Price: 1.200.000 VND <sup>card</sup>
+			<br>
+				Price: 960.000 VND <sup>ATM</sup>
+			</center></h4>
+			<button class="buy">Buy Now</button>
+		</div>				
+		
+
+		<div class="product">
+			<div class="ID_pro"> Code ACC #11203 </div>
+			<img src="imgs/636750519032658492_bandicam 2018-10-13 18-24-14-103.jpg" width="100%" height="171" alt="">
+				<div class="overlay">
+    			<div class="text">
+    				<ul>
+    					<li type="circle">Rank: Platium 4 season 8 </li>
+    					<li type="circle">Champion: 141</li>
+    					<li type="circle">Skin: 87</li>
+    					<li type="circle">Gem: 12</li>
+    					<li type="circle">IP: 29070</li>
+    					<li type="circle">Frame: Platium</li>
+    				</ul>
+    			</div>
+  				</div>
+			<h2><center>Account LOL</center></h2>
+			<h4><center>Price: 1.150.000 VND <sup>card</sup>
+			<br>
+				Price: 920.000 VND <sup>ATM</sup>
+			</center></h4>
+			<button class="buy">Buy Now</button>
+		</div>
+		
+		<div class="product">
+			<div class="ID_pro"> Code ACC #10976 </div>
+			<img src="imgs/636743571095929656_bandicam 2018-10-05 17-24-17-834.jpg" width="100%" height="171" alt="">
+				<div class="overlay">
+    			<div class="text">
+    				<ul>
+    					<li type="circle">Rank: Platium 5 season 8</li>
+    					<li type="circle">Champion: 141</li>
+    					<li type="circle">Skin: 65</li>
+    					<li type="circle">Gem: 15</li>
+    					<li type="circle">IP:30325</li>
+    					<li type="circle">Frame: Platium</li>
+    				</ul>
+    			</div>
+  				</div>
+			<h2><center>Account LOL</center></h2>
+			<h4><center>Price: 1.000.000 VND <sup>card</sup>
+			<br>
+				Price: 800.000 VND <sup>ATM</sup>
+			</center></h4>
+			<button class="buy">Buy Now</button>
+		</div>	
+		
+				<div class="product">
+			<div class="ID_pro"> Code ACC #10961 </div>
+			<img src="imgs/636743487659492609_bandicam 2018-10-05 15-05-27-768.jpg" width="100%" height="171" alt="">
+				<div class="overlay">
+    			<div class="text">
+    				<ul>
+    					<li type="circle">Rank: Platium 5 season 8</li>
+    					<li type="circle">Champion: 141</li>
+    					<li type="circle">Skin: 62</li>
+    					<li type="circle">Gem: 13</li>
+    					<li type="circle">IP: 55264</li>
+    					<li type="circle">Frame:  Platium</li>
+    				</ul>
+    			</div>
+  				</div>
+			<h2><center>Account LOL</center></h2>
+			<h4><center>Price: 950.000 VND <sup>card</sup>
+			<br>
+				Price:760.000 VND <sup>ATM</sup>
+			</center></h4>
+			<button class="buy">Buy Now</button>
+		</div>
+		
+		<div class="product">
+			<div class="ID_pro"> Code ACC #10864 </div>
+			<img src="imgs/636732667181199801_bandicam 2018-09-23 02-31-23-553.jpg" width="100%" height="171" alt="">
+				<div class="overlay">
+    			<div class="text">
+    				<ul>
+    					<li type="circle">Rank: Gold 2 season 8 </li>
+    					<li type="circle">Champion: 141</li>
+    					<li type="circle">Skin: 89</li>
+    					<li type="circle">Gem: 18</li>
+    					<li type="circle">IP: 198.000</li>
+    					<li type="circle">Frame: Platium</li>
+    				</ul>
+    			</div>
+  				</div>
+			<h2><center>Account LOL</center></h2>
+			<h4><center>Price: 1.080.000 VND <sup>card</sup>
+			<br>
+				Price: 870.000 VND <sup>ATM</sup>
+			</center></h4>
+			<button class="buy">Buy Now</button>
+		</div>
+		
+		<div class="product">
+			<div class="ID_pro"> Code ACC #10863 </div>
+			<img src="imgs/636732663652288347_bandicam 2018-09-23 02-25-35-462.jpg" width="100%" height="171" alt="">
+				<div class="overlay">
+    			<div class="text">
+    				<ul>
+    					<li type="circle">Rank: Platium 5 season 8</li>
+    					<li type="circle">Champion: 132</li>
+    					<li type="circle">Skin: 65</li>
+    					<li type="circle">Gem: 13</li>
+    					<li type="circle">IP: 293</li>
+    					<li type="circle">Frame: Platium</li>
+    				</ul>
+    			</div>
+  				</div>
+			<h2><center>Account LOL</center></h2>
+			<h4><center>Price: 970.500 VND <sup>card</sup>
+			<br>
+				Price: 780.000 VND <sup>ATM</sup>
+			</center></h4>
+			<button class="buy">Buy Now</button>
+		</div>
+		
+		<div class="product">
+			<div class="ID_pro"> Code ACC #10853 </div>
+			<img src="imgs/636732613879674147_bandicam 2018-09-23 01-02-34-848.jpg" width="100%" height="171" alt="">
+				<div class="overlay">
+    			<div class="text">
+    				<ul>
+    					<li type="circle">Rank: Platium 5 season 8 </li>
+    					<li type="circle">Champion: 128</li>
+    					<li type="circle">Skin: 65</li>
+    					<li type="circle">Gem: 13</li>
+    					<li type="circle">IP: 2670</li>
+    					<li type="circle">Frame: Platium</li>
+    				</ul>
+    			</div>
+  				</div>
+			<h2><center>Account LOL</center></h2>
+			<h4><center>Price: 900.000 VND <sup>card</sup>
+			<br>
+				Price: 720.000 VND <sup>ATM</sup>
+			</center></h4>
+			<button class="buy">Buy Now</button>
+		</div>
+		
+		<div class="product">
+			<div class="ID_pro"> Code ACC #10813 </div>
+			<img src="imgs/636726875417139195_bandicam 2018-09-16 09-38-27-237.jpg" width="100%" height="171" alt="">
+				<div class="overlay">
+    			<div class="text">
+    				<ul>
+    					<li type="circle">Rank: Platium 5</li>
+    					<li type="circle">Champion: 141</li>
+    					<li type="circle">Skin: 111</li>
+    					<li type="circle">Gem: 17</li>
+    					<li type="circle">IP: 21568</li>
+    					<li type="circle">Frame: Dimond</li>
+    				</ul>
+    			</div>
+  				</div>
+			<h2><center>Account LOL</center></h2>
+			<h4><center>Price: 1.300.000 VND <sup>card</sup>
+			<br>
+				Price: 1.040.000 VND <sup>ATM</sup>
+			</center></h4>
+			<button class="buy">Buy Now</button>
+		</div>
+		
+		<div class="product">
+			<div class="ID_pro"> Code ACC #08137 </div>
+			<img src="imgs/636616847568697361_bandicam 2018-05-12 01-18-33-297.jpg" width="100%" height="171" alt="">
+				<div class="overlay">
+    			<div class="text">
+    				<ul>
+    					<li type="circle">Rank: Gold 3 season 8 </li>
+    					<li type="circle">Champion: 140</li>
+    					<li type="circle">Skin:57</li>
+    					<li type="circle">Gem: 7</li>
+    					<li type="circle">IP: 28140</li>
+    					<li type="circle">Frame: Platium</li>
+    				</ul>
+    			</div>
+  				</div>
+			<h2><center>Account LOL</center></h2>
+			<h4><center>Price: 1.080.000 VND <sup>card</sup>
+			<br>
+				Price: 870.000 VND <sup>ATM</sup>
+			</center></h4>
+			<button class="buy">Buy Now</button>
+		</div>
+		
+		
+			<div class="product">
+			<div class="ID_pro"> Code ACC #08098 </div>
+			<img src="imgs/636612530654034047_bandicam 2018-05-07 01-24-11-770.jpg" width="100%" height="171" alt="">
+				<div class="overlay">
+    			<div class="text">
+    				<ul>
+    					<li type="circle">Rank: Gold 1 season 8 </li>
+    					<li type="circle">Champion: 140</li>
+    					<li type="circle">Skin: 67</li>
+    					<li type="circle">Gem: 17</li>
+    					<li type="circle">IP: 123.000</li>
+    					<li type="circle">Frame: Platium</li>
+    				</ul>
+    			</div>
+  				</div>
+			<h2><center>Account LOL</center></h2>
+			<h4><center>Price: 1.080.000 VND <sup>card</sup>
+			<br>
+				Price: 870.000 VND <sup>ATM</sup>
+			</center></h4>
+			<button class="buy">Buy Now</button>
+		</div>
+		
+		
+		
+		<div class="product">
+			<div class="ID_pro"> Code ACC #08000 </div>
+			<img src="imgs/636645740214060851_bandicam 2018-06-14 11-53-22-144.jpg" width="100%" height="171" alt="">
+				<div class="overlay">
+    			<div class="text">
+    				<ul>
+    					<li type="circle">Rank: Gold 1 season 8 </li>
+    					<li type="circle">Champion: 140</li>
+    					<li type="circle">Skin: 53</li>
+    					<li type="circle">Gem: 18</li>
+    					<li type="circle">IP: 50058</li>
+    					<li type="circle">Frame: Platium</li>
+    				</ul>
+    			</div>
+  				</div>
+			<h2><center>Account LOL</center></h2>
+			<h4><center>Price: 945.500 VND <sup>card</sup>
+			<br>
+				Price: 760.000 VND <sup>ATM</sup>
+			</center></h4>
+			<button class="buy">Buy Now</button>
+		</div>		
+		
+
+		
+																																					
+		
+	</div>
+	
+	<footer>
+	  		<div class="left_place">
+	  			<ul>
+	  				<li style="color: white" type="square" ><b>Address</b>: 2 Nguyen Thai Son ward 4, GoVap district, HCM city </li>
+	  				
+	  				<li style="color: white" type="square">Phone: <b>0988621177</b> </li>
+	  				
+	  				<li style="color: white" type="square">Guide to buy online </li>
+	  				<li style="color: white" type="square">Guide to buy installment </li>
+	  			</ul>
+	  		</div>
+	  		
+	  		<div class="center_place">
+	  			<ul>
+	  				<li style="color: white" type="square"> <b>Address</b>: 300 Quang Trung ward 9, GoVap district, HCM </li>
+	  				
+	  				<li style="color: white" type="square">Phone: <b>0222435888</b></li>
+	  				
+	  				<li style="color: white" type="square">Warranty Policy </li>
+	  				
+	  				<li style="color: white" type="square">Provide more tool to play </li>
+	  				
+	  			</ul>
+	  		</div>
+	  		<div class="right_place">
+	  			<img src="imgs/iconfb.jpg" >
+	  			<img src="imgs/icon2insta.jpg" >
+	  			<img src="imgs/icongmail.jpg" >
+	  			<img src="imgs/icontw.jpg" >
+	  		</div>
+	  	</footer>
+	
+	
+	
+	
+	
+	
+	
+
+	
+
+	
+</body>
+</html>
